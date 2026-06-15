@@ -1,25 +1,25 @@
-NAME = zombieHorde
+NAME=zombie
 
-CPP = c++
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98
-RM = rm -f
-
-SRCS = main.cpp Zombie/Zombie.cpp Zombie/ZombieEvent.cpp
+SRCS=Zombie/Zombie.cpp main.cpp
 OBJS = $(SRCS:.cpp=.o)
+
+COMPILER = c++
+FLAGS = -Wall -Wextra -Werror -std=c++98
+
+.cpp.o:
+	$(COMPILER) $(FLAGS) -c $< -o $(<:.cpp=.o)
+
+$(NAME): $(OBJS)
+	$(COMPILER) $(FLAGS) $(OBJS) -o $(NAME) 
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	$(CPP) $(CPPFLAGS) -o $@ $(OBJS)
-
-%.o: %.cpp
-	$(CPP) $(CPPFLAGS) -c $< -o $@
-
 clean:
-	$(RM) $(OBJS)
+	rm -f $(OBJS)
 
 fclean: clean
-	$(RM) $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
+
 .PHONY: all clean fclean re

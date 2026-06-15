@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mide-lim <mide-lim@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/15 19:29:33 by mide-lim          #+#    #+#             */
-/*   Updated: 2026/06/15 19:29:36 by mide-lim         ###   ########.fr       */
+/*   Created: 2026/06/15 20:11:12 by mide-lim          #+#    #+#             */
+/*   Updated: 2026/06/15 20:11:13 by mide-lim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "./Zombie/Zombie.hpp"
-#include "./Zombie/zombie_utils.hpp"
+#include <iostream>
+#include "HumanB.hpp"
 
-int main()
-{
-	Zombie *zombie1 = newZombie("saiago");
-	zombie1->announce();
-	delete zombie1;
+HumanB::HumanB(std::string name) : _name(name) {
+    std::cout << "humano criado" << std::endl;
+}
 
-	Zombie *zombie2 = newZombie("ferd");
-	zombie2->announce();
-	delete zombie2;
+void HumanB::setWeapon(Weapon &weapon) {
+    _weapon = &weapon;
+}
 
-	randomChamp("tegas");
+void HumanB::attack() {
+    std::cout << _name << " attacks with his " << _weapon->getType() << std::endl;
 }

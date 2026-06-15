@@ -5,24 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mide-lim <mide-lim@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/15 19:29:33 by mide-lim          #+#    #+#             */
-/*   Updated: 2026/06/15 19:29:36 by mide-lim         ###   ########.fr       */
+/*   Created: 2026/06/15 20:13:29 by mide-lim          #+#    #+#             */
+/*   Updated: 2026/06/15 20:13:30 by mide-lim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "./Zombie/Zombie.hpp"
-#include "./Zombie/zombie_utils.hpp"
+#include <iostream>
+#include "Harl/Harl.hpp"
 
-int main()
-{
-	Zombie *zombie1 = newZombie("saiago");
-	zombie1->announce();
-	delete zombie1;
-
-	Zombie *zombie2 = newZombie("ferd");
-	zombie2->announce();
-	delete zombie2;
-
-	randomChamp("tegas");
+int main () {
+    Harl harl;
+    harl.complain("debug");
+    harl.complain("info");
+    harl.complain("warning");
+    return 0;
 }

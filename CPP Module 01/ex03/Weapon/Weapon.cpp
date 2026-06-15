@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mide-lim <mide-lim@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/15 19:29:33 by mide-lim          #+#    #+#             */
-/*   Updated: 2026/06/15 19:29:36 by mide-lim         ###   ########.fr       */
+/*   Created: 2026/06/15 20:11:51 by mide-lim          #+#    #+#             */
+/*   Updated: 2026/06/15 20:11:54 by mide-lim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "./Zombie/Zombie.hpp"
-#include "./Zombie/zombie_utils.hpp"
+#include <iostream>
+#include "Weapon.hpp"
 
-int main()
-{
-	Zombie *zombie1 = newZombie("saiago");
-	zombie1->announce();
-	delete zombie1;
+Weapon::Weapon(std::string type) : _type(type) {
+    std::cout << "arma criada" << std::endl;
+}
 
-	Zombie *zombie2 = newZombie("ferd");
-	zombie2->announce();
-	delete zombie2;
+const std::string &Weapon::getType() const {
+    return _type;
+}
 
-	randomChamp("tegas");
+void Weapon::setType(const std::string &type) {
+    _type = type;
 }

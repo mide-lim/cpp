@@ -1,6 +1,9 @@
-NAME=zombie
+NAME=violence
 
-SRCS=Zombie/Zombie.cpp main.cpp
+SRCS=main.cpp \
+	Weapon/Weapon.cpp \
+	HumanA/HumanA.cpp \
+	HumanB/HumanB.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 COMPILER = c++

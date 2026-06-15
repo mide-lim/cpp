@@ -1,6 +1,6 @@
-NAME=zombie
+NAME=ref
 
-SRCS=Zombie/Zombie.cpp main.cpp
+SRCS=main.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 COMPILER = c++

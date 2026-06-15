@@ -1,20 +1,21 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mide-lim <mide-lim@student.42.rio>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/15 19:30:22 by mide-lim          #+#    #+#             */
+/*   Updated: 2026/06/15 19:30:23 by mide-lim         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "./Zombie/Zombie.hpp"
-#include "./Zombie/ZombieEvent.hpp"
+#include "./Zombie/zombie_utils.hpp"
 
 int main()
 {
-    ZombieEvent event;
-    Zombie *z1 = event.newZombie("Bob");
-    z1->announce();
-    delete z1;
-
-    Zombie* horde = event.zombieHorde(3, "HordeZombie");
-    if (horde) {
-        for (int i = 0; i < 3; ++i) {
-            horde[i].announce();
-        }
-        delete[] horde;
-    }
-    return 0;
+	Zombie	*hord = zombieHorde(10, "fodase");
+	zombieHordeAnnounce(10, hord);
+	delete[] hord;
 }

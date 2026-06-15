@@ -1,6 +1,6 @@
-NAME=zombie
+NAME=harl-filter
 
-SRCS=Zombie/Zombie.cpp main.cpp
+SRCS=main.cpp Harl/Harl.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 COMPILER = c++

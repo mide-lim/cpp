@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   zombie_utils.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mide-lim <mide-lim@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/15 19:29:33 by mide-lim          #+#    #+#             */
-/*   Updated: 2026/06/15 19:29:36 by mide-lim         ###   ########.fr       */
+/*   Created: 2026/06/15 20:08:58 by mide-lim          #+#    #+#             */
+/*   Updated: 2026/06/15 20:08:59 by mide-lim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "./Zombie/Zombie.hpp"
-#include "./Zombie/zombie_utils.hpp"
+#include <iostream>
 
-int main()
-{
-	Zombie *zombie1 = newZombie("saiago");
-	zombie1->announce();
-	delete zombie1;
-
-	Zombie *zombie2 = newZombie("ferd");
-	zombie2->announce();
-	delete zombie2;
-
-	randomChamp("tegas");
-}
+Zombie	*randomChamp(std::string name);
+Zombie	*newZombie(std::string name);
+Zombie  *zombieHorde(int N, std::string name);
+void	zombieHordeAnnounce(int N, Zombie *Horde);

@@ -1,21 +1,25 @@
-#ifndef ZOMBIE_HPP
-#define ZOMBIE_HPP
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mide-lim <mide-lim@student.42.rio>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/15 20:08:51 by mide-lim          #+#    #+#             */
+/*   Updated: 2026/06/15 20:08:52 by mide-lim         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #include <iostream>
-#include <string>
 
 class Zombie {
-private:
-    std::string name;
-
-public:
-    Zombie();
-    Zombie(std::string name);
-    ~Zombie();
-
-    void announce(void);
-    void setName(std::string name);
-    // const std::string& getName() const;
+	private:
+		std::string name;
+	public:
+		Zombie();
+		~Zombie();
+		void	announce(void);
+		std::string	getName();
+		void	setName(std::string name);
 };
-
-#endif // ZOMBIE_HPP
