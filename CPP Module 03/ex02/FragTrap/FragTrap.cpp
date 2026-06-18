@@ -5,6 +5,10 @@
 FragTrap::FragTrap() : ClapTrap()
 {
     std::cout << "FragTrap default constructor" << std::endl;
+    _name = "default";
+    _hitPoints = 100;
+    _energyPoints = 100;
+    _attackDamage = 30;
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
@@ -29,14 +33,20 @@ FragTrap::~FragTrap()
 FragTrap &FragTrap::operator=(const FragTrap &copy)
 {
     std::cout << "FragTrap assignation operator" << std::endl;
-    _name = copy._name;
-    _hitPoints = copy._hitPoints;
-    _energyPoints = copy._energyPoints;
-    _attackDamage = copy._attackDamage;
+
+    if (this != &copy)
+    {
+        _name = copy._name;
+        _hitPoints = copy._hitPoints;
+        _energyPoints = copy._energyPoints;
+        _attackDamage = copy._attackDamage;
+    }
+
     return *this;
 }
 
 void FragTrap::highFivesGuys(void)
 {
-    std::cout << "FragTrap " << _name << " says: \"High five!\"" << std::endl;
+    std::cout << "FragTrap " << _name
+              << " says: \"High five!\"" << std::endl;
 }
